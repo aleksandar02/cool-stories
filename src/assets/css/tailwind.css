@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
+
+body {
+}
+
+.transition-350 {
+  transition: all 450ms ease;
+}
+
+
+
 @tailwind utilities;
