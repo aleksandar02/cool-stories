@@ -10,7 +10,17 @@ const mutations = {
     state.stories = stories;
   },
   'CREATE_STORY'(state, story) {
-    state.stories.push(story);
+    state.stories.unshift(story);
+  },
+  'ADD_TO_FAVOURITES'(state, story_id) {
+    const favourite = state.stories.find(x => {
+      if(x.id == story_id) {
+        x.favourite = true;
+        return true;
+      }
+    })
+
+    state.favourites.unshift(favourite);
   }
 };
 
@@ -26,9 +36,10 @@ const actions = {
     commit('CREATE_STORY', story);
   },
   addToFavourites: ({ commit }, story_id) => {
-    // Call server
+    // Call server    
 
-    commit('ADD_TO_FAVOURITES', story);
+    // If: Successfull server status
+    commit('ADD_TO_FAVOURITES', story_id);
   }
 
 };
@@ -39,6 +50,9 @@ const getters = {
   },
   story: (state) => (story_id) => {
     return state.stories.find(x => x.id == story_id);
+  },
+  favourites: state => {
+    return state.favourites;
   }
 };
 

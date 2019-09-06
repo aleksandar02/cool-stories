@@ -36,7 +36,7 @@
         </router-link>
         <router-link
           v-if="isLoggedIn"
-          to="/add-story"
+          :to="{ name: 'add-story'}"
           active-class="text-blue-600"
           class="mr-12 font-semibold tracking-wider hover:text-blue-600"
           tag="li"
@@ -52,7 +52,7 @@
         >
           <a>Sign In</a>
         </router-link>
-        <router-link
+        <!-- <router-link
           v-if="isLoggedIn == false"
           to="/signup"
           active-class="text-blue-600"
@@ -60,7 +60,7 @@
           tag="li"
         >
           <a>Sign Up</a>
-        </router-link>
+        </router-link> -->
       </ul>
     </div>
   </div>

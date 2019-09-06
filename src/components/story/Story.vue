@@ -6,7 +6,7 @@
 
         <input type="text" class="border-1 border-gray-300 shadow-md transition-350 focus:shadow-lg outline-none rounded-full w-1/4 py-2 px-6 text-lg text-gray-600" placeholder="Search for stories...">
       </div>
-      <alert v-if="alert" class="transition-350" id="alert" ></alert>
+      <alert v-if="alert" :message=" alert ? 'Story created successfully!' : 'Story' " class="transition-350" id="alert" ></alert>
       <stories class="mt-6"></stories>
     </div>
   </div>

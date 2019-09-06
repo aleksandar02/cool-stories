@@ -44,7 +44,8 @@ export default {
         username: user.username,
         date: '29-8-2018',
         name: this.name,
-        storyText: this.text
+        storyText: this.text,
+        favourite: false
       }
 
       this.$store.dispatch('createStory', story);
