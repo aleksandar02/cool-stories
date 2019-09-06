@@ -1,7 +1,8 @@
 import stories from '../../data/storyData';
 
 const state = {
-  stories: []
+  stories: [],
+  favourites: []
 };
 
 const mutations = {
@@ -15,12 +16,19 @@ const mutations = {
 
 const actions = {
   initStories: ({ commit }) => {
+    // Call server
+
     commit('SET_STORIES', stories);
   },
   createStory: ({ commit }, story) => {
     // Call server 
 
     commit('CREATE_STORY', story);
+  },
+  addToFavourites: ({ commit }, story_id) => {
+    // Call server
+
+    commit('ADD_TO_FAVOURITES', story);
   }
 
 };

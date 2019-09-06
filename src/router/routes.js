@@ -20,7 +20,7 @@ export const routes = [
     name: 'favourite-stories',
     component: FavouriteStories,
     beforeEnter (to, from, next) {
-      if (store.state.isLoggedIn === true) {
+      if (store.state.isLoggedIn == true) {
         next()
       } else {
         next('/signin')
@@ -32,7 +32,7 @@ export const routes = [
     name: 'signin',
     component: SignIn,
     beforeEnter (to, from, next) {
-      if (store.state.isLoggedIn === false) {
+      if (store.state.isLoggedIn == false) {
         next()
       } else {
         next('/')
@@ -45,7 +45,7 @@ export const routes = [
     component: AddStory,
     beforeEnter (to, from, next) {
       console.log(store.state.isLoggedIn);
-      if (store.state.isLoggedIn === true) {
+      if (store.state.isLoggedIn == true) {
         next()
       } else {
         next('/signin')
