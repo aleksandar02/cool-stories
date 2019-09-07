@@ -14,13 +14,29 @@ const mutations = {
   },
   'ADD_TO_FAVOURITES'(state, story_id) {
     const favourite = state.stories.find(x => {
-      if(x.id == story_id) {
+      if (x.id == story_id) {
         x.favourite = true;
         return true;
       }
     })
 
     state.favourites.unshift(favourite);
+  },
+  'REMOVE_FROM_FAVOURITES'(state, story_id) {
+    const favourite = state.stories.find(x => {
+      if(x.id == story_id) {
+        x.favourite = false;
+        return true;
+      }
+    })
+
+    var index = state.favourites.findIndex(function (favourite) {
+      return favourite.id === story_id;
+    });
+    
+    if (index !== -1) {
+      state.favourites.splice(index, 1);
+    }
   }
 };
 
@@ -40,6 +56,12 @@ const actions = {
 
     // If: Successfull server status
     commit('ADD_TO_FAVOURITES', story_id);
+  },
+  removeFromFavourites: ({ commit }, story_id) => {
+    // Call server
+
+    // If: Successfully removed
+    commit('REMOVE_FROM_FAVOURITES', story_id);
   }
 
 };

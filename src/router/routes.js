@@ -27,7 +27,7 @@ export const routes = [
       }
     }
   },
-  {
+  { 
     path: '/add-story',
     name: 'add-story',
     component: AddStory,

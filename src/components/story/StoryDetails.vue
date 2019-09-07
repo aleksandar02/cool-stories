@@ -20,6 +20,14 @@
           v-if="this.$store.state.isLoggedIn && story.favourite == true"
           @click="removeFromFavourites(story_id)"
         >Remove from favourites</button>
+
+        <button
+          class="border-1 border-blue-600 ml-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
+        >Like <i class="fas fa-thumbs-up"></i></button>
+
+        <!-- <button
+          class="border-1 border-red-600 ml-4 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
+        >Dislike <i class="fas fa-thumbs-down"></i></button> -->
       </div>
     </div>
     <div class="w-1/4 container my-6 mx-2 px-6 py-6 rounded-lg shadow-lg">
@@ -51,7 +59,6 @@ export default {
     },
     removeFromFavourites(story_id) {
       this.$store.dispatch("removeFromFavourites", story_id);
-
     }
   }
 };
