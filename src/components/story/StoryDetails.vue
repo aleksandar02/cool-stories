@@ -7,7 +7,7 @@
         <p class="text-gray-600 my-8 leading-relaxed tracking-wide">{{ story.storyText }}</p>
 
         <button
-          class="border-1 border-teal-600 bg-teal-500 text-white rounded-lg shadow-md hover:bg-teal-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
+          class="border-1 border-teal-600 bg-teal-500 text-white focus:outline-none rounded-lg shadow-md hover:bg-teal-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
           v-if="this.$store.state.isLoggedIn && story.favourite == false"
           @click="addToFavourites(story_id)"
         >
@@ -22,6 +22,7 @@
         >Remove from favourites</button>
 
         <button
+          v-if="this.$store.state.isLoggedIn"
           class="border-1 border-blue-600 ml-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
         >Like <i class="fas fa-thumbs-up"></i></button>
 

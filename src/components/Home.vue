@@ -12,7 +12,7 @@
         <br />
         <br />
         <router-link
-          to="/addStory"
+          to="/add-story"
           tag="a"
           class="rounded-full text-white bg-blue-400 uppercase font-bold tracking-wide py-4 text-sm px-6 hover:bg-blue-500 transition-450"
         >Get Started Now</router-link>
@@ -20,10 +20,10 @@
       <div class="max-w-lg lg:mx-auto flex-grow mt-16">
         <ul class>
           <li
-            class="rounded-lg shadow-md py-2 text-lg px-4 text-white bg-green-400 mb-2"
+            class="rounded-lg shadow-md py-2 text-lg px-4 text-white bg-teal-400 mb-2"
           >Add your own stories</li>
-          <li class="rounded-lg shadow-lg py-2 px-4 text-lg text-white bg-green-400 mb-2">Edit your stories</li>
-          <li class="rounded-lg shadow-xl py-2 px-4 text-lg text-white bg-green-400">Delete them</li>
+          <li class="rounded-lg shadow-lg py-2 px-4 text-lg text-white bg-teal-400 mb-2">Edit your stories</li>
+          <li class="rounded-lg shadow-xl py-2 px-4 text-lg text-white bg-teal-400">Delete them</li>
         </ul>
       </div>
     </div>

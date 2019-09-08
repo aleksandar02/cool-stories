@@ -9,13 +9,15 @@ import StoryItem from './StoryItem.vue';
 import { mapGetters } from 'vuex';
 
 export default {
+  props: ['stories'],
   components: {
     'storyItem': StoryItem
   },
   computed: {
-    ...mapGetters([
-      'stories'
-    ])
+    
+  },
+  methods: {
+  
   }
 }
 </script>

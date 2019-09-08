@@ -8,6 +8,7 @@ import SignIn from '.././components/user/SignIn.vue';
 // import SignUp from '.././components/user/SignUp.vue';
 import StoryDetails from '.././components/story/StoryDetails.vue';
 import FavouriteStories from '.././components/story/FavouriteStories.vue';
+import MyStories from '.././components/story/MyStories.vue';
 
 
 export const routes = [
@@ -31,6 +32,18 @@ export const routes = [
     path: '/add-story',
     name: 'add-story',
     component: AddStory,
+    beforeEnter: (to, from, next) => {
+      if (store.state.isLoggedIn == true) {
+        next()
+      } else {
+        next('/signin')
+      }
+    }
+  },
+  { 
+    path: '/my-stories',
+    name: 'my-stories',
+    component: MyStories,
     beforeEnter: (to, from, next) => {
       if (store.state.isLoggedIn == true) {
         next()

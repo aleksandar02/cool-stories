@@ -46,7 +46,7 @@ export default new Vuex.Store({
       // Call server
   
       commit('USER_LOGGED_OUT');
-    }
+    }    
   },
   getters: {
     isLoggedIn: state => {
