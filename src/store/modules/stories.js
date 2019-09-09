@@ -1,4 +1,5 @@
 import stories from '../../data/storyData';
+import store from '../store';
 
 const state = {
   stories: [],
@@ -75,6 +76,12 @@ const getters = {
   },
   favourites: state => {
     return state.favourites;
+  },
+  myStories: state => {
+    const user = store.getters.getUser;
+    const myStories = state.stories.filter(x => x.username == user.username);
+
+    return myStories;
   }
 };
 

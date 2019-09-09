@@ -2,7 +2,10 @@
   <div class="container mx-auto my-6">
     <div class="relative">
       <div class="flex justify-between items-center mb-8 border-b-2 border-gray-200 pb-4">
-        <h1 class="text-5xl text-gray-800 font-semibold tracking-wide">Our Stories <small class="font-normal text-2xl">({{ searchStories.length }})</small></h1>
+        <h1 class="text-5xl text-gray-800 font-semibold tracking-wide">
+          Our Stories
+          <small class="font-normal text-2xl">({{ searchStories.length }})</small>
+        </h1>
 
         <search @setSearch="getSearch"></search>
       </div>
@@ -13,9 +16,9 @@
         id="alert"
       ></alert>
       <div v-if="searchStories.length == 0">
-          <hr class="w-1/3 mx-auto mt-6">
-          <h1 class="text-2xl font-light tracking-wide text-center mt-2">There are no stories!</h1>
-        </div>
+        <hr class="w-1/3 mx-auto mt-6" />
+        <h1 class="text-2xl font-light tracking-wide text-center mt-2">There are no stories!</h1>
+      </div>
       <stories class="mt-6" :stories="searchStories"></stories>
     </div>
   </div>
