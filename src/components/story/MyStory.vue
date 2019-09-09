@@ -26,17 +26,23 @@
         :to="{ name: 'edit-story', params: { id: story.id } }"
         class="focus:outline-none hover:bg-teal-200 py-2 px-4 rounded-lg hover:shadow-md transition-350"
       >Edit</router-link>
-      <router-link
-        :to="{ name: 'edit-story', params: { id: story.id } }"
+      <button
+        type="button"
         class="focus:outline-none hover:bg-red-300 py-2 px-4 rounded-lg hover:shadow-md transition-350"
-      >Delete</router-link>
+        @click="deleteStory(story.id)"
+      >Delete</button>
     </td>
   </tr>
 </template>
 
 <script>
 export default {
-  props: ["story"]
+  props: ["story"],
+  methods: {
+    deleteStory(story_id) {
+      this.$store.dispatch("deleteStory", story_id);
+    }
+  }
 };
 </script>
 

@@ -38,6 +38,17 @@ const mutations = {
     if (index !== -1) {
       state.favourites.splice(index, 1);
     }
+  },
+
+  'REMOVE_FROM_STORIES'(state, story_id) {
+    var index = state.stories.findIndex(function (story) {
+      return story.id === story_id;
+    });
+    
+    if (index !== -1) {
+      state.stories.splice(index, 1);
+      state.favourites.splice(index, 1);
+    }
   }
 };
 
@@ -63,6 +74,12 @@ const actions = {
 
     // If: Successfully removed
     commit('REMOVE_FROM_FAVOURITES', story_id);
+  },
+  deleteStory: ({ commit }, story_id) => {
+    // Call server
+
+    // if: Successfully removed
+    commit('REMOVE_FROM_STORIES', story_id);
   }
 
 };
