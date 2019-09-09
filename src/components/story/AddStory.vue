@@ -1,7 +1,9 @@
 <template>
   <div class="container mx-auto my-6 py-6 px-16 rounded-lg shadow-lg">
     <form action @submit.prevent="onSubmit">
-      <h1 class="text-5xl text-center text-gray-800 font-semibold mb-8 tracking-wide">Add your own story</h1>
+      <h1
+        class="text-5xl text-center text-gray-800 font-semibold mb-8 tracking-wide"
+      >Add your own story</h1>
       <label for class="text-xl tracking-wide font-light">Name</label>
       <br />
       <input
@@ -21,7 +23,7 @@
       ></textarea>
       <button
         type="submit"
-        class="border-1 block mt-4 border-blue-600 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
+        class="border-1 block mt-4 mb-3 border-blue-600 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-450 py-2 px-4 text-xl font-light tracking-wider"
       >Create</button>
     </form>
   </div>
@@ -31,9 +33,9 @@
 export default {
   data() {
     return {
-      name: '',
-      text: ''
-    }
+      name: "",
+      text: ""
+    };
   },
   methods: {
     onSubmit() {
@@ -42,16 +44,16 @@ export default {
       const story = {
         id: Math.floor(Math.random() * (100 - 4 + 1)) + 4,
         username: user.username,
-        date: '29-8-2018',
+        date: "29-8-2018",
         name: this.name,
         storyText: this.text,
         favourite: false
-      }
+      };
 
-      this.$store.dispatch('createStory', story);
+      this.$store.dispatch("createStory", story);
       this.$router.push({
-        name: 'story',
-        query: { story_created: 'true' }
+        name: "story",
+        query: { story_created: "true" }
       });
     }
   }

@@ -10,13 +10,17 @@
         <search @setSearch="getSearch"></search>
       </div>
 
-      <table class="w-full text-gray-800">
-        <tr class="bg-blue-500 text-white text-left">
+      <div class="flex justify-end">
+        <router-link tag="a" class="bg-green-400 mb-3 text-lg text-white font-semibold rounded-lg tracking-wide py-2 px-4 hover:bg-blue-500 transition-350" to="/add-story">New <i class="fas fa-plus"></i></router-link>
+      </div>
+
+      <table class="w-full text-gray-800 ">
+        <tr class="bg-blue-500 text-white text-left w-full overflow-x-scroll">
           <th class="p-3 w-1/12">Name</th>
           <th class="p-3 w-3/12">Story</th>
           <th class="p-3 w-1/12">Date</th>
           <th class="p-3 w-1/12 text-center">Favourite</th>
-          <th class="p-3 w-3/12 text-center">Actions</th>
+          <th class="p-3 w-3/12 text-center">Actions </th>
         </tr>
         <my-story v-for="story in searchStories" :key="story.id" :story="story"></my-story>
       </table>
